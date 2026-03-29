@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.fromTo('.hero-title span', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out' });
     gsap.fromTo('.hero-subtitle', { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.5 });
 
-    // 1. Initialize Lenis for Smooth Scroll
+    // 1. Initialize Lenis for Smooth Scrolling
     const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
