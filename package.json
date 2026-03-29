@@ -2,7 +2,11 @@
   "name": "myportfolio",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "main": "main.js",
+=======
+  "main": "app.js",
+>>>>>>> 7541dfa68a738bf72f336efdcc76b8361183e133
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

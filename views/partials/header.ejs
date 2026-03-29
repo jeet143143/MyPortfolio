@@ -23,7 +23,18 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 </head>
 <body class="bg-dark text-light overflow-x-hidden">
+<canvas id="webgl-canvas"></canvas>
 
+    <!-- Cinematic Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <h1 class="glitch-text" data-text="SYSTEM.BOOT">SYSTEM.BOOT</h1>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progress-text" class="neon-text mt-2">0%</p>
+        </div>
+    </div>
 
     <!-- Magnetic Custom Cursor -->
     <div id="cursor" class="custom-cursor"></div>
@@ -42,3 +53,4 @@
         </ul>
         <a href="#contact" class="btn-neon magnetic-element"><span>CONTACT_</span></a>
     </nav>
+<script src="/css/js/main.js"></script>
