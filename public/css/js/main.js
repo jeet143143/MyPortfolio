@@ -1,33 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Preloader Logic
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.getElementById('progress-bar');
-    const progressText = document.getElementById('progress-text');
-    let progress = 0;
-    const loadInterval = setInterval(() => {
-        progress += Math.floor(Math.random() * 15) + 5;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(loadInterval);
-            progressBar.style.width = '100%';
-            progressText.innerText = '100%';
-            
-            // Fade out preloader
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.visibility = 'hidden';
-                    
-                    // Trigger initial hero animations after load
-                    gsap.fromTo('.hero-title span', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out' });
-                    gsap.fromTo('.hero-subtitle', { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.5 });
-                }, 1000);
-            }, 500);
-        } else {
-            progressBar.style.width = progress + '%';
-            progressText.innerText = progress + '%';
-        }
-    }, 150);
 
     // 1. Initialize Lenis for Smooth Scrolling
     const lenis = new Lenis({
