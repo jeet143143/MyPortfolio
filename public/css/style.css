@@ -58,28 +58,19 @@ button { cursor: none; }
 /* Custom Cursor */
 .custom-cursor {
     position: fixed; top: 0; left: 0; width: 6px; height: 6px;
-    background: white; border-radius: 50%;
+    background: var(--text-main); border-radius: 50%;
     pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
     transition: width 0.3s, height 0.3s, background-color 0.3s;
 }
 .custom-cursor-follower {
     position: fixed; top: 0; left: 0; width: 40px; height: 40px;
-    border: 2px solid white; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;
     pointer-events: none; z-index: 9998; transform: translate(-50%, -50%);
     transition: transform 0.1s, border-color 0.3s;
 }
 
 /* WebGL Background */
-
-#webgl-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
+#webgl-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
 
 /* Preloader */
 .preloader {
@@ -213,11 +204,68 @@ button { cursor: none; }
 .chatbot-input input:focus { outline: none; }
 .chatbot-input button { padding: 0 1.5rem; background: #fff; color: #000; border: none; font-weight: 600; letter-spacing: 1px; }
 
+/* =========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* Tablets & Small Laptops (1024px) */
+@media (max-width: 1024px) {
+    .container { padding: 0 1.5rem; }
+    .hero-title { font-size: 5rem; }
+    .about-grid { grid-template-columns: 1fr 1.2fr; gap: 3rem; }
+}
+
+/* Tablets (Portrait) & Large Phones (768px) */
 @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .nav-links { display: none; }
-    .hero-title { font-size: 3.5rem; }
-    .hero-subtitle { font-size: 0.9rem; letter-spacing: 3px; }
+    /* Layout & Globals */
+    .section-padding { padding: 80px 0; }
     .custom-cursor, .custom-cursor-follower { display: none; }
     body, a, button { cursor: auto; }
+
+    /* Navigation */
+    .nav-links { display: none; }
+    .fixed-nav { padding: 1rem 1.5rem; }
+
+    /* Hero */
+    .hero-title { font-size: 3.5rem; }
+    .hero-subtitle { font-size: 0.85rem; letter-spacing: 2px; }
+    .hero-cta { flex-direction: column; gap: 1rem; }
+
+    /* Grids Flattener */
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    /* Re-center about section vertically */
+    .about-text-container { text-align: center; }
+    .about-card { padding: 2rem 1.5rem; }
+    .about-text-container .mt-4.d-flex { justify-content: center; flex-direction: column; }
+    .profile-img { max-width: 350px; }
+    
+    /* Project Cards */
+    .project-image-wrapper { height: 200px; }
+    .project-content { padding: 1.5rem; }
+    .project-content h3 { font-size: 1.2rem; }
+    
+    /* Chatbot Widget Scaling */
+    #chatbot-window { width: calc(100vw - 3rem); right: -1.5rem; }
+}
+
+/* Small Phones (480px) */
+@media (max-width: 480px) {
+    .section-padding { padding: 60px 0; }
+    .hero-title { font-size: 2.5rem; letter-spacing: -1px; }
+    .hero-subtitle { font-size: 0.7rem; letter-spacing: 1px; }
+    .nav-brand { font-size: 1rem; }
+    
+    /* Buttons */
+    .btn-solid { padding: 0.8rem 2.5rem; width: 100%; border-radius: 12px; }
+    .btn-outline, .btn-resume { width: 100%; justify-content: center; border-radius: 12px; }
+    .hero-cta { width: 100%; padding: 0 1rem; }
+
+    /* Final Grid Collapse */
+    .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+    
+    /* Input formatting */
+    .contact-form-container { width: 100%; }
 }
