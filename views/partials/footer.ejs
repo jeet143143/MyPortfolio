@@ -1,0 +1,34 @@
+    <!-- Global Footer -->
+    <footer class="footer-section section-padding glass-panel-dark">
+        <div class="footer-content text-center">
+            <h2 class="neon-text">SYSTEM.OFFLINE()</h2>
+            <p>© <%= new Date().getFullYear() %> Jeet Senapati. All systems operational.</p>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Float Button and Modal -->
+    <div id="chatbot-widget">
+        <button id="chatbot-toggle" class="btn-neon magnetic-element">
+            INITIALIZE_AI
+        </button>
+        <div id="chatbot-window" class="glass-panel hidden">
+            <div class="chatbot-header">
+                <h3>SYSTEM.AI_ASSISTANT</h3>
+                <button id="chatbot-close" style="background:none; border:none; color:#fff; font-size:1.2rem;">&times;</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="chat-message ai-message">Initializing... Ask me anything about Jeet's skills or projects.</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chat-input-field" placeholder="Type a message...">
+                <button id="chat-send-btn">_SEND</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/chatbot.js"></script>
+    <script type="module" src="/js/webgl/Scene.js"></script>
+</body>
+</html>
