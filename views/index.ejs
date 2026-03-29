@@ -81,22 +81,31 @@
     <section id="projects" class="section-padding content-section">
         <div class="container">
             <h2 class="section-title text-center scroll-fade"><span class="neon-number">03.</span> FEATURED_PROJECTS</h2>
-            <div class="projects-wrapper">
+        <div class="projects-wrapper"> <!-- changed this to grid later -->
                 <% if(projects && projects.length > 0) { %>
-                    <% projects.forEach((proj, index) => { %>
-                        <div class="project-card scroll-fade d-flex">
-                            <div class="project-content">
-                                <h3 class="neon-text"><%= proj.title %></h3>
-                                <p><%= proj.description %></p>
-                                <div class="tech-tags">
-                                    <% proj.techStack.forEach(t => { %>
-                                        <span class="tag"><%= t %></span>
-                                    <% }) %>
+                    <div class="projects-grid">
+                        <% projects.forEach((proj, index) => { %>
+                            <div class="project-glass-card scroll-fade magnetic-element">
+                                <div class="project-image-wrapper">
+                                    <% if(proj.imageUrl) { %>
+                                        <img src="<%= proj.imageUrl %>" alt="<%= proj.title %>" class="project-thumbnail">
+                                    <% } else { %>
+                                        <div class="project-placeholder"></div>
+                                    <% } %>
                                 </div>
-                                <a href="<%= proj.repoLink || '#' %>" target="_blank" class="btn-outline">VIEW_SOURCE</a>
+                                <div class="project-content">
+                                    <h3 class="neon-text"><%= proj.title %></h3>
+                                    <p><%= proj.description %></p>
+                                    <div class="tech-tags">
+                                        <% proj.techStack.forEach(t => { %>
+                                            <span class="tag"><%= t %></span>
+                                        <% }) %>
+                                    </div>
+                                    <a href="<%= proj.repoLink || '#' %>" target="_blank" class="btn-outline w-100 text-center" style="display:block; margin-top:2rem;">VIEW_SOURCE</a>
+                                </div>
                             </div>
-                        </div>
-                    <% }) %>
+                        <% }) %>
+                    </div>
                 <% } else { %>
                     <div class="project-card scroll-fade no-projects">
                         <div class="project-content text-center w-100">
