@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
-=======
     // 0. Trigger initial hero animations immediately
     gsap.fromTo('.hero-title span', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: 'power3.out' });
     gsap.fromTo('.hero-subtitle', { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.5 });
->>>>>>> 7541dfa68a738bf72f336efdcc76b8361183e133
 
-    // 1. Initialize Lenis for Smooth Scrolling
+    // 1. Initialize Lenis for Smooth Scroll
     const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
