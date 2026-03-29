@@ -72,14 +72,6 @@ button { cursor: none; }
 /* WebGL Background */
 #webgl-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
 
-/* Preloader */
-.preloader {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: var(--bg-dark); z-index: 99999; display: flex;
-    justify-content: center; align-items: center; transition: opacity 1s, visibility 1s;
-}
-.progress-bar-container { width: 250px; height: 1px; background: var(--accent-dark); margin: 20px auto 0; position: relative; overflow: hidden; }
-#progress-bar { width: 0%; height: 100%; background: var(--text-main); box-shadow: 0 0 10px rgba(255,255,255,0.5); transition: width 0.1s; }
 
 /* Typography */
 .glitch-text, .neon-text { color: var(--text-main); letter-spacing: 1px; }
