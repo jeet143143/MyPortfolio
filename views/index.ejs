@@ -33,7 +33,7 @@
                     <div class="cyber-frame"></div>
                 </div>
                 <div class="about-text-container scroll-fade">
-                    <div class="glass-card about-card">
+                    <div class="glass-card about-card" data-tilt data-tilt-max="3" data-tilt-speed="600" data-tilt-glare data-tilt-max-glare="0.2">
                         <h3 class="neon-text mb-3">INITIALIZING PROFILE...</h3>
                         <p class="stagger-text">A passionate B.Tech student specializing in Computer Science and Information technology. Skilled in programming, web development and foundational cybersecurity principles. I have a keen interest in AI and machine learning, and I have successfully implemented projects integrating AI-driven solutions with dynamic web development.</p>
                         <div class="edu-stamp mt-4">
@@ -86,7 +86,7 @@
                 <% if(projects && projects.length > 0) { %>
                     <div class="projects-grid">
                         <% projects.forEach((proj, index) => { %>
-                            <div class="project-glass-card scroll-fade magnetic-element">
+                            <div class="project-glass-card scroll-fade magnetic-element" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
                                 <div class="project-image-wrapper">
                                     <% if(proj.imageUrl) { %>
                                         <img src="<%= proj.imageUrl %>" alt="<%= proj.title %>" class="project-thumbnail">
@@ -123,7 +123,7 @@
     <section id="contact" class="section-padding content-section">
         <div class="container text-center">
             <h2 class="section-title scroll-fade"><span class="neon-number">04.</span> INITIATE_CONTACT</h2>
-            <div class="contact-form-container glass-card mx-auto scroll-fade">
+            <div class="contact-form-container glass-card mx-auto scroll-fade" data-tilt data-tilt-max="2" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.1">
                 <form id="contact-form">
                     <div class="input-group">
                         <input type="text" id="contact-name" placeholder="TERMINAL_ID (Name)" required>
